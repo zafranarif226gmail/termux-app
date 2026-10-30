@@ -54,7 +54,9 @@ public class LiftShellUtils {
                                 } else {
                                     // End of shebang.
                                     String shebangExecutable = builder.toString();
-                                    if (shebangExecutable.startsWith("/usr") || shebangExecutable.startsWith("/bin")) {
+                                    if (shebangExecutable.startsWith("/system/bin/")) {
+                                        interpreter = shebangExecutable;
+                                    } else if (shebangExecutable.startsWith("/usr") || shebangExecutable.startsWith("/bin")) {
                                         String[] parts = shebangExecutable.split("/");
                                         String binary = parts[parts.length - 1];
                                         interpreter = LiftConstants.LIFT_BIN_PREFIX_DIR_PATH + "/" + binary;
