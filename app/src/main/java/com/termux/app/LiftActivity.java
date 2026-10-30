@@ -276,6 +276,9 @@ public final class LiftActivity extends AppCompatActivity implements ServiceConn
 
         // Send the {@link LiftConstants#BROADCAST_LIFT_OPENED} broadcast to notify apps that Lift
         // app has been opened.
+        // Request storage permission when Lift is opened.
+        requestStoragePermission(false);
+
         LiftUtils.sendLiftOpenedBroadcast(this);
     }
 
