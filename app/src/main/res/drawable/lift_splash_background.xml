@@ -1,0 +1,24 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#080510"/>
+        </shape>
+    </item>
+    <item
+        android:width="240dp"
+        android:height="240dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="120dp"
+                android:centerColor="#663F00FF"
+                android:endColor="#00080510"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/ic_foreground"
+        android:width="180dp"
+        android:height="180dp"
+        android:gravity="center"/>
+</layer-list>
