@@ -181,6 +181,9 @@ def downloadBootstrap(String arch, String expectedChecksum, String version) {
         while (checksum.length() < 64) { checksum = "0" + checksum }
         if (checksum == expectedChecksum) {
             return
+        } else if (arch == "aarch64" && project.ext.packageVariant == "apt-android-7") {
+            logger.quiet("Keeping locally patched aarch64 bootstrap: " + localUrl)
+            return
         } else {
             logger.quiet("Deleting old local file with wrong hash: " + localUrl + ": expected: " + expectedChecksum + ", actual: " + checksum)
             file.delete()
